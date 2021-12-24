@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="mcnc-plugin-ekyc-cam" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>EkycCam</name>
+    <js-module name="EkycCam" src="www/EkycCam.js">
+        <clobbers target="EkycCam" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="EkycCam">
+                <param name="android-package" value="mcnc.plugin.ekyc.cam.EkycCam" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/EkycCam.java" target-dir="src/mcnc/plugin/ekyc/cam/EkycCam" />
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+        <!-- <lib-file src="src/android/ekyc_camera-release.aar" /> -->
+        <lib-file src="src/android/ekyc_camera-release.1.0.1.aar" />
+        <!-- <resource-file src="src/android/ekyc_camera-release.aar" target="libs/ekyc_camera-release.aar" /> -->
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="EkycCam">
+                <param name="ios-package" value="EkycCam" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/EkycCam.m" />
+    </platform>
+</plugin>

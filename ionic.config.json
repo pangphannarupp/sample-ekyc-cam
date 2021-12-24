@@ -1,0 +1,7 @@
+{
+  "name": "sample-ekyc-cam",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

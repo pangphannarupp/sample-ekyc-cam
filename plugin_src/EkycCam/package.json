@@ -1,0 +1,19 @@
+{
+  "name": "mcnc-plugin-ekyc-cam",
+  "version": "1.0.0",
+  "description": "For using eKYC Camera",
+  "cordova": {
+    "id": "mcnc-plugin-ekyc-cam",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "MCNC",
+  "license": "ISC"
+}

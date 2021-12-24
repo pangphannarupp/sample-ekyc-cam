@@ -1,0 +1,29 @@
+// repositories{    
+//   jcenter()
+//   flatDir {
+//       dirs 'libs'
+//    }
+// }
+
+// dependencies {
+//    compile(name:'ekyc_camera-release', ext:'aar')
+// }
+
+// android {
+//   packagingOptions {
+//     exclude 'META-INF/NOTICE'
+//     exclude 'META-INF/LICENSE'
+//   }
+// }
+
+dependencies {
+    //eKYC
+    implementation 'com.innov8tif.okaycam:OkayCam:1.1.6'
+
+    // implementation files('libs/ekyc_camera-release.aar')
+    implementation files('libs/ekyc_camera-release.1.0.1.aar')
+
+    //Kotlin
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
+}

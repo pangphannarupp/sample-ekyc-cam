@@ -14,8 +14,9 @@
         <source-file src="src/android/EkycCam.java" target-dir="src/mcnc/plugin/ekyc/cam/EkycCam" />
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
         <!-- <lib-file src="src/android/ekyc_camera-release.aar" /> -->
-        <lib-file src="src/android/ekyc_camera-release.1.0.1.aar" />
-        <!-- <resource-file src="src/android/ekyc_camera-release.aar" target="libs/ekyc_camera-release.aar" /> -->
+        <!-- <lib-file src="src/android/ekyc_camera-release.1.0.1.aar" /> -->
+        <!-- <lib-file src="src/android/ekyc_camera-release.1.0.2.aar" /> -->
+        <lib-file src="src/android/ekyc_camera-release.1.0.3.aar" />
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">

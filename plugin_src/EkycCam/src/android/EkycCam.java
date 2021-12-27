@@ -13,6 +13,7 @@ import android.widget.Toast;
 import android.util.Log;
 import android.content.Context;
 import com.mcnc.ekyc_camera.EkycCamera;
+import com.mcnc.ekyc_camera.interfaces.PhotoListener;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -128,7 +129,7 @@ public class EkycCam extends CordovaPlugin {
                     bottomLabelOption.put("color", option.getJSONObject(BOTTOM_LABEL_OPTION).getString("color"));
                 }
                 if(option.getJSONObject(BOTTOM_LABEL_OPTION).has("size") && !option.getJSONObject(BOTTOM_LABEL_OPTION).isNull("size")) {
-                    bottomLabelOption.put("size", option.getJSONObject(BOTTOM_LABEL_OPTION).getString("size"));
+                    bottomLabelOption.put("size", option.getJSONObject(BOTTOM_LABEL_OPTION).getInt("size"));
                 }
                 cameraTakeIdCardOption.put(BOTTOM_LABEL_OPTION, bottomLabelOption);
             }
@@ -205,12 +206,22 @@ public class EkycCam extends CordovaPlugin {
             }
 
 
-            ekycCamera.takeIdCard(cameraTakeIdCardOption);
+            ekycCamera.takeIdCard(cameraTakeIdCardOption, new PhotoListener() {
+                @Override
+                public void onCompleted(JSONObject result) {
+                    callbackContext.success(result);
+                }
+
+                @Override
+                public void onError(JSONObject error) {
+                    callbackContext.error(error);
+                }
+            });
         } catch(JSONException e) {
-            callbackContext.error("Error JSON");
+            // callbackContext.error("Error JSON");
         }
 
-        callbackContext.success("Successfully");
+        // callbackContext.success("Successfully");
     }
 
     private void takeSelfie(JSONObject option, CallbackContext callbackContext) {
@@ -318,11 +329,21 @@ public class EkycCam extends CordovaPlugin {
             }
 
 
-            ekycCamera.takeSelfie(cameraTakeSelfieOption);
+            ekycCamera.takeSelfie(cameraTakeSelfieOption, new PhotoListener() {
+                @Override
+                public void onCompleted(JSONObject result) {
+                    callbackContext.success(result);
+                }
+
+                @Override
+                public void onError(JSONObject error) {
+                    callbackContext.error(error);
+                }
+            });
         } catch(JSONException e) {
-            callbackContext.error("Error JSON");
+            // callbackContext.error("Error JSON");
         }
 
-        callbackContext.success("Successfully");
+        // callbackContext.success("Successfully");
     }
 }

@@ -28,20 +28,20 @@ export class HomePage {
         color: "#ffffff",
         size: 16,
       },
-      bottomLabelOption: {
-        text: 'សួស្តី',
-        color: "#ffffff",
-        size: 14,
-      },
+      // bottomLabelOption: {
+      //   text: 'សួស្តី',
+      //   color: "#ffffff",
+      //   size: 14,
+      // },
       // timerOption: {
       //   backgroundColor: '#ff8842',
       //   numberColor: "#fff842",
       // },
-      // captureOption: {
-      //   delay: 3,
-      //   showFlash: false,
-      //   content: null, //not require
-      // },
+      captureOption: {
+        delay: 0,
+        showFlash: false,
+        content: null, //not require
+      },
       // frameOption: {
       //   size: null, //not require
       //   color: "#fff842",
@@ -57,6 +57,8 @@ export class HomePage {
       // },
     }).then(result => {
       console.log(result);
+    }).catch(error => {
+      console.log(error);
     });
   }
 
@@ -88,6 +90,8 @@ export class HomePage {
       // },
     }).then(result => {
       console.log(result);
+    }).catch(error => {
+      console.log(error);
     });
   }
 

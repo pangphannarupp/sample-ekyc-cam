@@ -9,9 +9,7 @@ import org.json.JSONObject;
 
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CordovaInterface;
-import android.widget.Toast;
 import android.util.Log;
-import android.content.Context;
 import com.mcnc.ekyc_camera.EkycCamera;
 import com.mcnc.ekyc_camera.interfaces.PhotoListener;
 
@@ -20,12 +18,10 @@ import com.mcnc.ekyc_camera.interfaces.PhotoListener;
  */
 public class EkycCam extends CordovaPlugin {
     private static final String TAG = "EKYC CAM";
-    Context context;
     EkycCamera ekycCamera;
 
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        context = cordova.getActivity().getApplicationContext();
         ekycCamera = new EkycCamera(cordova.getActivity());
 
         Log.d(TAG, "Initialize EKYC CAM");
@@ -54,9 +50,6 @@ public class EkycCam extends CordovaPlugin {
     }
 
     private void takeIdCard(JSONObject option, CallbackContext callbackContext) {
-        // Toast.makeText(context, "Take Id Card: " + message, Toast.LENGTH_SHORT).show();
-        // ekycCamera.takeIdCardTest();
-
         try {
             JSONObject cameraTakeIdCardOption = new JSONObject();
             
@@ -225,9 +218,6 @@ public class EkycCam extends CordovaPlugin {
     }
 
     private void takeSelfie(JSONObject option, CallbackContext callbackContext) {
-        // Toast.makeText(context, "Take Selfie: " + message, Toast.LENGTH_SHORT).show();
-        // ekycCamera.takeSelfieTest();
-        
         try {
             JSONObject cameraTakeSelfieOption = new JSONObject();
 

@@ -16,7 +16,8 @@
         <!-- <lib-file src="src/android/ekyc_camera-release.aar" /> -->
         <!-- <lib-file src="src/android/ekyc_camera-release.1.0.1.aar" /> -->
         <!-- <lib-file src="src/android/ekyc_camera-release.1.0.2.aar" /> -->
-        <lib-file src="src/android/ekyc_camera-release.1.0.3.aar" />
+        <!-- <lib-file src="src/android/ekyc_camera-release.1.0.3.aar" /> -->
+        <lib-file src="src/android/ekyc_camera-release.1.0.4.aar" />
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
